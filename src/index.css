@@ -1,0 +1,100 @@
+:root {
+    --primary-blue: #1A2BD9;
+    /* Deep Royal Blue */
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --bg-blue: #1d4ed8;
+    /* Page Background match */
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    /* Cleaner modern font preference */
+    background-color: var(--bg-blue);
+    background-image: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure full height for the layout */
+#root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(10px, -20px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+    /* Added delay */
+    opacity: 0;
+}
+
+/* Background shapes for visual interest */
+.bg-shape {
+    position: absolute;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out;
+}
+
+.bg-shape-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: #764ba2;
+    animation-delay: 0s;
+}
+
+.bg-shape-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: #667eea;
+    animation-delay: -5s;
+}
